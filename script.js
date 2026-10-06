@@ -11,10 +11,18 @@ const getSum = () => {
   });
 
   const table = document.querySelector("table");
-  const row = document.createElement("tr");
-  const cell = document.createElement("td");
 
+  const oldRow = document.querySelector(".total-row");
+  if (oldRow) {
+    oldRow.remove();
+  }
+
+  const row = document.createElement("tr");
+  row.className = "total-row";
+
+  const cell = document.createElement("td");
   cell.textContent = total;
+
   row.appendChild(cell);
   table.appendChild(row);
 };
